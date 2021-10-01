@@ -1,7 +1,11 @@
 const socketIo = require("socket.io")();
+const messageString = "message";
 
-socketIo.on('connection', () => {
-    console.log('someone connected!');
+socketIo.on('connection', (socket) => {
+  console.log("connects")
+  socket.on(messageString, message => {
+    socketIo.emit(messageString, message)
+  })
   });
 
-socketIo.listen(3000);
+socketIo.listen(3001);

@@ -1,3 +1,4 @@
+//run => nodemon server.js
 const socketIo = require("socket.io")();
 const messageString = "message";
 
